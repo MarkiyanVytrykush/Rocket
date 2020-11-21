@@ -23,23 +23,10 @@ struct Rocket: Codable {
 
 struct Result: Codable, Identifiable {
   var id: Int?
-//  var cosparId: String?
-//  var sortDate: String?
   var name: String?
-//  var provider: Provider?
-//  var vehicle: Provider?
-//  var missions: [Mission]?
   var launchDescription: String?
-//  var estDate: EstDate?
-//  var tags: [Tag]?
   var weatherSummary: String?
   var weatherTemp: Int?
-//  var weatherIcon: String?
-//  var weatherUpdated: Date?
-//  var quicktext: String?
-//  var result: Int?
-//  var suborbital: Bool?
-//  var modified: Date?
 }
 
 // MARK: - EstDate
