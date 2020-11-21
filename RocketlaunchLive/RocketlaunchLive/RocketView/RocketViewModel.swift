@@ -12,19 +12,20 @@ final class RocketViewModel: ObservableObject {
 
   private let netService: NetService
 
-  @Published var membersListFull = false
+  @Published var rocketListFull = false
   @Published var currentPage = 0
   @Published var perPages = 5
   @Published var rocket = Rocket()
+  
   private var subscriptions = Set<AnyCancellable>()
 
   init(netService: NetService = NetService()) {
     self.netService = netService
-    self.fetchRocket(next: currentPage + 1)
+    self.fetchRocket()
   }
   
-  private func fetchRocket(next: Int) {
-    netService.requestPublisher(url: "https://fdo.rocketlaunch.live/json/launches/next/" + "\(next)",
+  func fetchRocket() {
+    netService.requestPublisher(url: "https://fdo.rocketlaunch.live/json/launches/next/" + "\(currentPage + 1)",
                                 httpMethod: .get,
                                 responseType: Rocket.self)
       .sink { completion in
@@ -33,6 +34,9 @@ final class RocketViewModel: ObservableObject {
         }
       } receiveValue: { rocket in
         DispatchQueue.main.async {
+          if rocket.count ?? 0 < self.perPages {
+            self.rocketListFull = true
+          }
           self.rocket = rocket
         }
       }.store(in: &subscriptions)

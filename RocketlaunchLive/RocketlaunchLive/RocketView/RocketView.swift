@@ -7,18 +7,27 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
-struct RocketListView : View {
-
+struct RocketListView: View {
   @ObservedObject var viewModel: RocketViewModel
-
+  
   var body: some View {
     NavigationView {
       List {
         ForEach(viewModel.rocket.result ?? []) { rocket in
-          Text(rocket.name ?? "")
+          Text("\(rocket.name ?? "")")
+        }
+        if viewModel.rocketListFull == false {
+          ActivityView(isAnimating: self.$viewModel.rocketListFull,
+                       style: .small,
+                       color: .black)
+            .onAppear {
+              viewModel.fetchRocket()
+            }
         }
       }
+      .navigationBarTitle("Rocket")
     }
   }
 }
