@@ -16,7 +16,7 @@ struct RocketListView: View {
     NavigationView {
       List {
         ForEach(viewModel.rocket.result ?? []) { rocket in
-          Text("\(rocket.name ?? "")")
+          RocketRow(viewModel: RocketRowViewModel(rocketResult: rocket))
         }
         if viewModel.rocketListFull == false {
           ActivityView(isAnimating: self.$viewModel.isLoading,

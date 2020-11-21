@@ -26,7 +26,7 @@ final class RocketViewModel: ObservableObject {
   }
   
   func fetchRocket() {
-    isLoading.toggle()
+    isLoading = true
     netService.requestPublisher(url: "https://fdo.rocketlaunch.live/json/launches/next/" + "\(currentPage + 1)",
                                 httpMethod: .get,
                                 responseType: Rocket.self)

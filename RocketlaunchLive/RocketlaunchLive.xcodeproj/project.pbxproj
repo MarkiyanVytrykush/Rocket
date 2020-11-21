@@ -13,12 +13,13 @@
 		CE44EFBF25691DFB00DDBCD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE44EFBE25691DFB00DDBCD3 /* Preview Assets.xcassets */; };
 		CE44EFC82569201700DDBCD3 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFC72569201700DDBCD3 /* NetworkService.swift */; };
 		CE44EFD2256920F200DDBCD3 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFD1256920F200DDBCD3 /* Rocket.swift */; };
-		CE44EFD82569246900DDBCD3 /* RocketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFD72569246900DDBCD3 /* RocketView.swift */; };
+		CE44EFD82569246900DDBCD3 /* RocketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFD72569246900DDBCD3 /* RocketListView.swift */; };
 		CE44EFDC2569247400DDBCD3 /* RocketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFDB2569247400DDBCD3 /* RocketViewModel.swift */; };
 		CE44EFE22569254300DDBCD3 /* RocketListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFE12569254300DDBCD3 /* RocketListRow.swift */; };
 		CE44EFE72569272B00DDBCD3 /* RocketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFE62569272B00DDBCD3 /* RocketDetailView.swift */; };
 		CE44EFEB2569273600DDBCD3 /* RocketDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE44EFEA2569273600DDBCD3 /* RocketDetailViewModel.swift */; };
 		CEA1568125693B65004292F9 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA1568025693B65004292F9 /* ActivityIndicator.swift */; };
+		CEA15685256943EF004292F9 /* RocketListRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA15684256943EE004292F9 /* RocketListRowViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +31,13 @@
 		CE44EFC025691DFB00DDBCD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE44EFC72569201700DDBCD3 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE44EFD1256920F200DDBCD3 /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		CE44EFD72569246900DDBCD3 /* RocketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketView.swift; sourceTree = "<group>"; };
+		CE44EFD72569246900DDBCD3 /* RocketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListView.swift; sourceTree = "<group>"; };
 		CE44EFDB2569247400DDBCD3 /* RocketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewModel.swift; sourceTree = "<group>"; };
 		CE44EFE12569254300DDBCD3 /* RocketListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListRow.swift; sourceTree = "<group>"; };
 		CE44EFE62569272B00DDBCD3 /* RocketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailView.swift; sourceTree = "<group>"; };
 		CE44EFEA2569273600DDBCD3 /* RocketDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketDetailViewModel.swift; sourceTree = "<group>"; };
 		CEA1568025693B65004292F9 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		CEA15684256943EE004292F9 /* RocketListRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketListRowViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +111,7 @@
 		CE44EFD52569245800DDBCD3 /* RocketView */ = {
 			isa = PBXGroup;
 			children = (
-				CE44EFD72569246900DDBCD3 /* RocketView.swift */,
+				CE44EFD72569246900DDBCD3 /* RocketListView.swift */,
 				CE44EFDB2569247400DDBCD3 /* RocketViewModel.swift */,
 			);
 			path = RocketView;
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				CE44EFE12569254300DDBCD3 /* RocketListRow.swift */,
+				CEA15684256943EE004292F9 /* RocketListRowViewModel.swift */,
 			);
 			path = RocketListRow;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE44EFD82569246900DDBCD3 /* RocketView.swift in Sources */,
+				CE44EFD82569246900DDBCD3 /* RocketListView.swift in Sources */,
 				CE44EFBA25691DF400DDBCD3 /* ContentView.swift in Sources */,
 				CE44EFE22569254300DDBCD3 /* RocketListRow.swift in Sources */,
 				CE44EFC82569201700DDBCD3 /* NetworkService.swift in Sources */,
@@ -211,6 +214,7 @@
 				CEA1568125693B65004292F9 /* ActivityIndicator.swift in Sources */,
 				CE44EFD2256920F200DDBCD3 /* Rocket.swift in Sources */,
 				CE44EFE72569272B00DDBCD3 /* RocketDetailView.swift in Sources */,
+				CEA15685256943EF004292F9 /* RocketListRowViewModel.swift in Sources */,
 				CE44EFB825691DF400DDBCD3 /* RocketlaunchLiveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

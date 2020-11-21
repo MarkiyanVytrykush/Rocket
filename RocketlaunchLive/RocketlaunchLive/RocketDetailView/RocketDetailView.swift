@@ -10,11 +10,11 @@ import SwiftUI
 import Combine
 
 struct RocketDetailView : View {
-
+  
   @ObservedObject var viewModel: RocketDetailViewModel
 
   var body: some View {
-    Text("")
+    Text("\(viewModel.rocketResult.id ?? 0)")
   }
 }
 
