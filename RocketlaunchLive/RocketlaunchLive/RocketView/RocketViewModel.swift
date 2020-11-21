@@ -13,6 +13,7 @@ final class RocketViewModel: ObservableObject {
   private let netService: NetService
 
   @Published var rocketListFull = false
+  @Published var isLoading = true
   @Published var currentPage = 0
   @Published var perPages = 5
   @Published var rocket = Rocket()
@@ -25,15 +26,18 @@ final class RocketViewModel: ObservableObject {
   }
   
   func fetchRocket() {
+    isLoading.toggle()
     netService.requestPublisher(url: "https://fdo.rocketlaunch.live/json/launches/next/" + "\(currentPage + 1)",
                                 httpMethod: .get,
                                 responseType: Rocket.self)
       .sink { completion in
         if case .failure(let error) = completion {
+          self.isLoading = false
           print("completion: \(error.localizedDescription)")
         }
       } receiveValue: { rocket in
         DispatchQueue.main.async {
+          self.isLoading = false
           if rocket.count ?? 0 < self.perPages {
             self.rocketListFull = true
           }

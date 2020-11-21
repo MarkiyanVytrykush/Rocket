@@ -11,7 +11,7 @@ import Combine
 
 struct RocketListView: View {
   @ObservedObject var viewModel: RocketViewModel
-  
+
   var body: some View {
     NavigationView {
       List {
@@ -19,7 +19,7 @@ struct RocketListView: View {
           Text("\(rocket.name ?? "")")
         }
         if viewModel.rocketListFull == false {
-          ActivityView(isAnimating: self.$viewModel.rocketListFull,
+          ActivityView(isAnimating: self.$viewModel.isLoading,
                        style: .small,
                        color: .black)
             .onAppear {
